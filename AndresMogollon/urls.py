@@ -18,6 +18,7 @@ from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
 from django.conf.urls import handler404, handler500
+from AndresMogollonApp.views import pag_404_not_found, pag_500_error_server
 
 urlpatterns = [
     path('admin', admin.site.urls),
@@ -28,5 +29,5 @@ urlpatterns = [
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-# handler404 = pag_404_not_found
-# handler500 = pag_500_error_server
+handler404 = pag_404_not_found
+handler500 = pag_500_error_server

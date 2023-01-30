@@ -128,11 +128,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATIC_URL = '/static/'
+STATICFILES_DIRS = (
+    BASE_DIR/ 'static',
+)
 STATIC_URL = '/static/'
 if not DEBUG:    
     STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
@@ -147,12 +151,12 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = os.environ.get('CORREO')
 EMAIL_HOST_PASSWORD = os.environ.get('KEY_CORREO')
 
-if not DEBUG:
-    MEDIA_URL = '/AndresMogollon/'
-    DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+# if not DEBUG:
+#     MEDIA_URL = '/AndresMogollon/'
+#     DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
-    CLOUDINARY_STORAGE = {
-        'CLOUD_NAME' : os.environ.get('CLOUD_NAME'),
-        'API_KEY' : os.environ.get('API_KEY'),
-        'API_SECRET' : os.environ.get('API_SECRET')
-    }
+#     CLOUDINARY_STORAGE = {
+#         'CLOUD_NAME' : os.environ.get('CLOUD_NAME'),
+#         'API_KEY' : os.environ.get('API_KEY'),
+#         'API_SECRET' : os.environ.get('API_SECRET')
+#     }
