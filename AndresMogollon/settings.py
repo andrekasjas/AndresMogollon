@@ -151,12 +151,12 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = os.environ.get('CORREO')
 EMAIL_HOST_PASSWORD = os.environ.get('KEY_CORREO')
 
-# if not DEBUG:
-#     MEDIA_URL = '/AndresMogollon/'
-#     DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+if not DEBUG:
+    MEDIA_URL = '/AndresMogollon/'
+    DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
-#     CLOUDINARY_STORAGE = {
-#         'CLOUD_NAME' : os.environ.get('CLOUD_NAME'),
-#         'API_KEY' : os.environ.get('API_KEY'),
-#         'API_SECRET' : os.environ.get('API_SECRET')
-#     }
+    CLOUDINARY_STORAGE = {
+        'CLOUD_NAME' : os.environ.get('CLOUD_NAME'),
+        'API_KEY' : os.environ.get('API_KEY'),
+        'API_SECRET' : os.environ.get('API_SECRET')
+    }
