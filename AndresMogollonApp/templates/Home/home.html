@@ -1,0 +1,36 @@
+<!-- inicio plantilla home -->
+{% load static %}
+{% block content %}
+<div class="container-fluid bg d-flex align-items-center mb-5 py-5" id="home" style="min-height: 100vh;">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-5 px-5 pl-lg-0 pb-5 pb-lg-0">
+                <img class="img-fluid w-100 rounded-circle shadow-sm" src="{{perfil.imagen.url}}"
+                    alt="">
+            </div>
+            <div class="col-lg-7 text-center text-lg-left">
+                <h3 class="text-white font-weight-normal mb-1 ml-2">Soy</h3>
+                <h1 class="h1 display-3 text-uppercase mb-2" style="-webkit-text-stroke: 2px #ffffff;">Andres Mogollon</h1>
+                <h1 class="typed-text-output d-inline font-weight-lighter text-white"></h1>
+                <div class="typed-text d-none">Ingeniero de sistemas, Desarrollador, Programador</div>
+                <div class="d-flex align-items-center justify-content-center justify-content-lg-start pt-5">
+                    <a class="btn-play" href="{{documento}}"
+                         download="CV_ANDRES_MOGOLLON" role="button">
+                        <div class="download text-center"
+                            style="z-index: 3!important; background: transparent; border: none; color: black;">
+                            <svg class="css-i6dzq1" stroke-linejoin="round" stroke-linecap="round" fill="none"
+                                stroke-width="2" stroke="currentColor" height="24" width="24" viewBox="0 0 24 24">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7 10 12 15 17 10"></polyline>
+                                <line y2="3" x2="12" y1="15" x1="12"></line>
+                            </svg>
+                        </div>
+                    </a>
+                    <h5 class="font-weight-normal text-white m-0 ml-4 d-none d-sm-block">Descargar CV</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock%}
+<!-- fin plantilla home -->

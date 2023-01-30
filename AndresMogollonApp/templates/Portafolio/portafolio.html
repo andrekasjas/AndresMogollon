@@ -1,0 +1,47 @@
+<!-- inicio plantilla servicion o productos -->
+{% load static %}
+{% block content %}
+<div class="container-fluid py-5" id="servicios">
+    <div class="container">
+        <div class="position-relative d-flex align-items-center justify-content-center">
+            <h1 class="display-1 text-uppercase text-center" style="-webkit-text-stroke: 1px #dee2e6;">portafolio</h1>
+            <h1 class="position-absolute text-uppercase text-info text-center">Proyectos</h1>
+        </div>
+
+        <div class="row service">
+            {% for proyecto in proyectos%}
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div style="margin-bottom: 30px; box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;">
+                    <div class="service-item service-img">
+                        <a href="{{proyecto.imagen.url}}" data-lightbox="service">
+                            <img src="{{proyecto.imagen.url}}" alt="{{proyecto.nombre}}"
+                                title="{{proyecto.descripcion}}" style="width: auto; height: 15rem; margin: 0%;">
+                            <div class="service-overlay">
+                                <p>
+                                    {{proyecto.descripcion}}
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="service-text">
+                        {% if proyecto.git %}
+                        <a class="boto" href="{{proyecto.git}}" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        {% endif %}
+                        <h3>{{proyecto.nombre|title}}<span class="text-secondary"
+                                style="font-size: 15px!important"><br>{{proyecto.tipo}}</span></h3>
+                        {% if proyecto.host %}
+                            <a class="botona" href="{{proyecto.host}}" target="_blank">></a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+</div>
+</div>
+{% endblock%}
+<!-- fin plantilla servicion o productos -->

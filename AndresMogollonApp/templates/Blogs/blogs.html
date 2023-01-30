@@ -1,0 +1,42 @@
+<!-- plantilla blog -->
+{% load static %}
+{% block content %}
+<div class="container-fluid py-5" id="blog">
+    <div class="container">
+        <div class="position-relative d-flex align-items-center justify-content-center">
+            <h1 class="display-1 text-uppercase text-center" style="-webkit-text-stroke: 1px #dee2e6;">Blog</h1>
+            <h1 class="position-absolute text-uppercase text-info text-center">Noticias</h1>
+        </div>
+        <div class="owl-carousel testimonial-carousel-2 wow fadeInUp" style="background:transparent!important;"
+            data-wow-delay="0.6s">
+            <!-- for anidado -->
+            {% for post in posts %}
+            <div class="testimonial-item my-4">
+                <div class="d-flex align-items-center border-bottom pb-5 px-5">
+                    {% if post.imagen %}
+                    <img class="img-fluid rounded mr-2" src="{{post.imagen.url}}" alt="{{post.titulo}}"
+                        title="{{post.contenido}}" style="width: 60px; height: 60px;">
+                    {% else%}
+                    <img class="img-fluid rounded mr-2" src="{% static 'andresMogollon/img/sin_foto.png' %}"
+                        style="width: 60px; height: 60px;">
+                    {% endif %}
+                    <div class="ps-4">
+                        <h4 class="mb-1">{{post.titulo|upper}}</h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="pt-4 px-4 col-9">
+                        {{post.contenido}}
+                    </div>
+                    <div class="col-2 pt-4">
+                        {% if post.link %}
+                        <a href="{{post.link}}" class="btn btn-info" target="_blank" rel="noopener noreferrer">Ver</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

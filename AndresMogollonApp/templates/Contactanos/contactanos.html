@@ -1,0 +1,97 @@
+<!-- plantilla contactanos -->
+{% load static %}
+{% block content %}
+<div class="container-fluid py-5" id="contact">
+    <div class="container">
+        <div class="position-relative d-flex align-items-center justify-content-center mb-4">
+            <h1 class="display-1 text-uppercase text-center" style="-webkit-text-stroke: 1px #dee2e6;">Contacto</h1>
+            <h1 class="position-absolute text-uppercase text-info text-center">Contactanos</h1>
+        </div>
+        <div class="row justify-content-center mt-2">
+            <div class="col-lg-5 mb-4">
+                <h3 class="font-weight-bold m-0 text-center mb-4 mt-4">Redes</h3>
+                <div class="mb-4">
+                    <a class="btn linkedin red" href="https://www.linkedin.com/in/andr%C3%A9s-fernando-mogollon-cabeza-385253234"
+                        target="_blank">
+                        <i class="fab fa-linkedin-in fa-2x text-white">
+                            <span class="text-red">Ver&nbsp;LinkedIn</span>
+                        </i>
+                    </a>
+                </div>
+                <div class="mb-4">
+                    <a class="btn github red" href="https://github.com/andrekasjas"
+                        target="_blank">
+                        <i class="fab fa-github fa-2x text-white" style="transform: translateX(-3px) translateY(2px)!important;">
+                            <span class="text-red">Ver&nbsp;GitHub</span>
+                        </i>
+                    </a>
+                </div>
+                <div class="mb-4">
+                    <a class="btn whatsapp red" href="https://wa.me/message/CNPLDPUN6L3LB1"
+                        target="_blank">
+                        <i class="fab fa-whatsapp fa-2x text-white">
+                            <span class="text-red">Ir&nbsp;a&nbsp;WhatsApp</span>
+                        </i>
+                    </a>
+                </div>
+                <div class="mb-4">
+                    <a class="btn telefono red">
+                        <i class="fa fa-phone fa-2x text-white"
+                            style="transform: translateX(-3px) translateY(2px)!important;">
+                            <span class="text-red">+57&nbsp;3042540470</span>
+                        </i>
+                    </a>
+                </div>
+                <div class="mb-4">
+                    <a class="btn correo red">
+                        <i class="fa fa-envelope fa-2x text-white"
+                            style="transform: translateX(-3px) translateY(2px)!important;">
+                            <span class="text-red">andresmogollob@gmail.com</span>
+                        </i>
+                    </a>
+                </div>
+                <div class="text-center">
+                    <img src="{% static 'andresMogollon/img/whatsapp.png' %}" alt="" width="160" height="160">
+                </div>
+                <div class="mb-4 text-center text-secondary">
+                    <h3 class="h3">QR WhatsApp</h3>
+                </div>
+            </div>
+            <div class="col-lg-5 text-center">
+                <div class="container-form">
+                    <!-- condicional para verificar envio de correo -->
+                    {% if 'exito' in request.GET %}
+                    <script LANGUAJE="javascript">
+                        alert("Informacion enviada correctamente");
+                        window.location.href = "/";
+                    </script>
+                    {% endif %}
+                    {% if 'error' in request.GET %}
+                    <script>
+                        alert("A ocurrido un problema intenta de nuevo");
+                        location.hash = "#contact";
+                    </script>
+                    {% endif %}
+                    {% if messages %}
+                    <div class="alert alert-danger" role="alert">
+                        {% for message in messages %}
+                        {{ message }}
+                        {% endfor %}
+                        <script>  
+                            location.hash = "#contact";
+                        </script>
+                    </div>
+                    {% endif %}
+                    <h3 class="font-weight-bold m-0 text-center">Envia un correo</h3>
+                    <!-- formulario con csrf -->
+                    <form action="" method="POST">{% csrf_token %}
+                        {{formulario}}
+                        <!-- formulario generado por el orm -->
+                        <button class="btn-send"><span>Enviar</span><i></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

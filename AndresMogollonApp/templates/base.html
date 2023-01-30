@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% load static %}
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="Ingeniero de sistemas Andres Fernando Mogollon Cabeza apasionado por la tecnologia y la programación">
+        <title>Andres</title>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="{% static 'andresMogollon/css/andresMogollon.css' %}" rel="stylesheet">
+        <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet">
+        <link rel="shortcut icon" type="image/png" href="{% static 'andresMogollon/img/favicon.ico' %}"/>
+        <link href="{% static 'bootstrap/libs/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+        <link href="{% static 'bootstrap/libs/lightbox/css/lightbox.min.css' %}" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet"> 
+    </head>
+    <body data-spy="scroll" data-target=".navbar" data-offset="51">
+        <!-- base -->
+        <nav class="navbar fixed-top shadow navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-lg-5" style="display: none;">
+            <a href="#" class="navbar-brand ml-lg-3 volver">
+                <h1 class="m-0 display-4 d-inline"><span class="text-info">Andres</span>Mogollon</h1>
+            </a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse px-lg-3" id="navbarCollapse">
+                <div class="navbar-nav m-auto py-0">
+                    <a href="#home" class="nav-item nav-link active">Home</a>
+                    <a href="#about" class="nav-item nav-link">Sobre</a>
+                    <a href="#ubicacion" class="nav-item nav-link">Calidad</a>
+                    <a href="#servicios" class="nav-item nav-link">Portafolio</a>
+                    <a href="#contact" class="nav-item nav-link">Contactame</a>
+                    <a href="#blog" class="nav-item nav-link">Blog</a> 
+                </div>
+            </div>
+            <a class="download-button" href="{{documento}}"
+                        download="CV_ANDRES_MOGOLLON" role="button">
+                        <div class="docs"><svg class="css-i6dzq1" stroke-linejoin="round" stroke-linecap="round"
+                                fill="none" stroke-width="2" stroke="currentColor" height="20" width="20"
+                                viewBox="0 0 24 24">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line y2="13" x2="8" y1="13" x1="16"></line>
+                                <line y2="17" x2="8" y1="17" x1="16"></line>
+                                <polyline points="10 9 9 9 8 9"></polyline>
+                            </svg>CV</div>
+                        <div class="download">
+                            <svg class="css-i6dzq1" stroke-linejoin="round" stroke-linecap="round" fill="none"
+                                stroke-width="2" stroke="currentColor" height="24" width="24" viewBox="0 0 24 24">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7 10 12 15 17 10"></polyline>
+                                <line y2="3" x2="12" y1="15" x1="12"></line>
+                            </svg>
+                        </div>
+                    </a>
+        </nav>
+        <!-- fin base -->
+        {% include "Home/home.html" %} <!-- incrusta plantilla home -->
+        {% include "Sobre/sobre.html" %}
+        {% include "Calidad/calidad.html"%} <!-- incrusta plantilla mision_vision -->
+        {% include "Portafolio/portafolio.html" %}<!-- incrusta plantilla serviciosProductos -->
+        {% include "Contactanos/contactanos.html"%}<!-- incrusta plantilla contactanos -->
+        {% include "Blogs/blogs.html"%}<!-- incrusta plantilla blog -->
+        <!-- base -->
+        <i class="fa fa-2x fa-angles-down text-white scroll-to-bottom"></i>
+        <a href="#" class="btn btn-outline-dark px-0 back-to-top volver"><i class="fa fa-angle-double-up"></i></a>
+
+        <div class="container-fluid bg-info text-white py-5 px-sm-3 px-md-5">
+            <div class="container text-center py-5">
+                <div class="d-flex justify-content-center mb-4">
+                    <a class="btn btn-light btn-social mr-2" href="https://www.linkedin.com/in/andr%C3%A9s-fernando-mogollon-cabeza-385253234/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-light btn-social mr-2" href="https://github.com/andrekasjas" target="_blank"><i class="fab fa-github"></i></a>
+                    <a class="btn btn-light btn-social mr-2" href="https://wa.me/message/CNPLDPUN6L3LB1" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                </div>
+                <p class="m-0">&copy; {% now "Y" %} Andres Fernando Mogollon Cabeza All rights reserved.</p>    
+            </div>
+            <div class="text-center">
+                <a href="/admin" class="text-secondary" target="_blank">
+                    <img src="https://counter10.optistats.ovh/private/contadorvisitasgratis.php?c=cu1putjf2njc3jnhpzuabf5u5yzt6qsd">
+                </a>
+            </div>
+        </div>
+        <!-- fin base -->
+        <script src="{% static 'jquery/jquery-3.6.1.min.js' %}"></script>
+        <script src="{% static 'bootstrap/libs/typed/typed.min.js' %}"></script>
+        <script src="{% static 'bootstrap/libs/easing/easing.min.js' %}"></script>
+        <script src="{% static 'bootstrap/libs/waypoints/waypoints.min.js' %}"></script>
+        <script src="{% static 'bootstrap/libs/isotope/isotope.pkgd.min.js' %}"></script>
+        <script src="{% static 'bootstrap/libs/lightbox/js/lightbox.min.js' %}"></script>
+        <script src="{% static 'bootstrap/libs/owlcarousel/owl.carousel.min.js' %}"></script>
+        <script src="{% static 'andresMogollon/js/andresMogollon.js' %}"></script>
+        <script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}" ></script>
+    </body>
+</html>
