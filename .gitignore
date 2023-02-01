@@ -7,8 +7,8 @@
 *.pyc
 __pycache__/
 local_settings.py
-# db.sqlite3
-# db.sqlite3-journal
+db.sqlite3
+db.sqlite3-journal
 media
 
 # If your build process includes running collectstatic, then you probably don't need or want to include staticfiles/
@@ -163,6 +163,10 @@ dmypy.json
 
 # Cython debug symbols
 cython_debug/
+blog
+documento
+foto
+proyecto
 
 # PyCharm
 #  JetBrains specific template is maintained in a separate JetBrains.gitignore that can
@@ -172,8 +176,3 @@ cython_debug/
 #.idea/
 
 # End of https://www.toptal.com/developers/gitignore/api/django
-
-blog/
-documento/
-foto/
-proyecto/
