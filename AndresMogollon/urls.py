@@ -21,7 +21,7 @@ from django.conf.urls import handler404, handler500
 from AndresMogollonApp.views import pag_404_not_found, pag_500_error_server
 
 urlpatterns = [
-    path('admin', admin.site.urls),
+    path('admin/', admin.site.urls),
     path('captcha/', include('captcha.urls')),
     path('', include('AndresMogollonApp.urls')),
 ]
