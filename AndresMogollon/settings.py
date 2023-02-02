@@ -87,10 +87,10 @@ WSGI_APPLICATION = 'AndresMogollon.wsgi.application'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(
-        default='postgres://andresmogollon_6urx_user:kS2Vx150dPnX8p1xH1uxhKyywWQlW5t0@dpg-cfd9sqta4996a90o1m70-a.oregon-postgres.render.com/andresmogollon_6urx',
-        conn_max_age=600    
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
 
 
