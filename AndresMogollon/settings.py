@@ -88,7 +88,7 @@ WSGI_APPLICATION = 'AndresMogollon.wsgi.application'
 
 DATABASES = {
     'default': dj_database_url.config(
-        default='sqlite:///db.sqlite3',
+        default='postgres://andresmogollon_6urx_user:kS2Vx150dPnX8p1xH1uxhKyywWQlW5t0@dpg-cfd9sqta4996a90o1m70-a.oregon-postgres.render.com/andresmogollon_6urx',
         conn_max_age=600    
     )
 }
