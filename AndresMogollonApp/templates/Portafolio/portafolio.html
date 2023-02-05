@@ -29,11 +29,26 @@
                             <i class="fab fa-github"></i>
                         </a>
                         {% endif %}
-                        <h3>{{proyecto.nombre|title}}<span class="text-secondary"
-                                style="font-size: 15px!important"><br>{{proyecto.tipo}}</span></h3>
+                        <h3>
+                            {{proyecto.nombre|title}}
+                            
+                        </h3>
+                        
                         {% if proyecto.host %}
-                            <a class="botona" href="{{proyecto.host}}" target="_blank">></a>
+                            <a class="boto" href="{{proyecto.host}}" target="_blank" style="padding: 10px 12px 12px 12px!important;">
+                                <i class="fa fa-duotone fa-earth-americas"></i>
+                            </a>
                         {% endif %}
+                    </div>
+                    <div class="tecn overflow-auto">
+                        <p class="text-secondary" style="margin: 0 0 0 0!important;">
+                            {{proyecto.frameworks}}  
+                        </p>
+                    </div>
+                    <div class="tecn overflow-auto">
+                        <p class="text-secondary" style="margin: 0 0 0 0!important;">
+                            {{proyecto.tecnologia}}  
+                        </p>
                     </div>
                 </div>
             </div>

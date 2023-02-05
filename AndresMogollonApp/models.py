@@ -23,6 +23,8 @@ class post(models.Model):
 class proyectos(models.Model):
     nombre = models.CharField(max_length=60)
     descripcion = models.CharField(max_length=250)
+    tecnologia = models.CharField(max_length=250)
+    frameworks = models.CharField(max_length=250)
     imagen = models.ImageField(upload_to = 'proyecto')
     git = models.URLField(max_length=230, null=True, blank=True)
     host = models.URLField(max_length=230, null=True, blank=True)
