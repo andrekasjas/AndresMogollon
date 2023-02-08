@@ -1,6 +1,7 @@
 <!-- inicio plantilla ubicacion -->
 {% load static %}
 {% block content %}
+{% if educaciones or experiencias %}
 <div class="container-fluid py-5" id="ubicacion">
     <div class="container">
         <div class="position-relative d-flex align-items-center justify-content-center mb-4">
@@ -8,6 +9,7 @@
             <h1 class="position-absolute text-uppercase text-info text-center">Educacion y experiencia</h1>
         </div>
         <div class="row">
+            {% if educaciones %}
             <div class="col-lg-6">
                 <h3 class="mb-4">Educación</h3>
                 <div class="border-left border-primary pt-2 pl-4 ml-2">
@@ -23,6 +25,8 @@
                     {% endfor %}
                 </div>
             </div>
+            {% endif %}
+            {% if experiencias %}
             <div class="col-lg-6">
                 <h3 class="mb-4">Experiencia</h3>
                 <div class="border-left border-primary pt-2 pl-4 ml-2">
@@ -38,8 +42,10 @@
                     {% endfor %}
                 </div>
             </div>
+            {% endif %}
         </div>
     </div>
 </div>
+{% endif %}
 {% endblock %}
 <!-- fin plantilla ubicacion -->

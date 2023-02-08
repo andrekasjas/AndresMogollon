@@ -30,10 +30,16 @@
                 <div class="navbar-nav m-auto py-0">
                     <a href="#home" class="nav-item nav-link active">Home</a>
                     <a href="#about" class="nav-item nav-link">Sobre</a>
-                    <a href="#ubicacion" class="nav-item nav-link">Calidad</a>
-                    <a href="#servicios" class="nav-item nav-link">Portafolio</a>
+                    {% if educaciones or experiencias %}
+                        <a href="#ubicacion" class="nav-item nav-link">Calidad</a>
+                    {% endif %}
+                    {% if proyectos %}
+                        <a href="#servicios" class="nav-item nav-link">Portafolio</a>
+                    {% endif %}
                     <a href="#contact" class="nav-item nav-link">Contactame</a>
-                    <a href="#blog" class="nav-item nav-link">Blog</a> 
+                    {% if posts %}
+                        <a href="#blog" class="nav-item nav-link">Blog</a> 
+                    {% endif %}
                 </div>
             </div>
             <a class="download-button" href="{{documento}}"

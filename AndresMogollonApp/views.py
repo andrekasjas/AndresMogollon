@@ -31,7 +31,7 @@ def home(request):
             messages.error(request,'Por favor revise los campos')  
     else:    
         formulario = FormularioContacto() #inicialziar el formulario
-    posts = blog() #obtener todos los blogs
+    posts = post.objects.all()
     birthDate =  datetime(2000, 11, 19) 
     today = datetime.today()
     age = today.year - birthDate.year - ((today.month, today.day) <
@@ -58,10 +58,7 @@ def home(request):
 # Create your views here.
 
 
-# funcion para obtener todos los blogs usando el orm
-def blog():
-    posts = post.objects.all()
-    return posts
+
 
 
 # vista para manejar el error 404

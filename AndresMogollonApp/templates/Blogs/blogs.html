@@ -1,6 +1,7 @@
 <!-- plantilla blog -->
 {% load static %}
 {% block content %}
+{% if posts %}
 <div class="container-fluid py-5" id="blog">
     <div class="container">
         <div class="position-relative d-flex align-items-center justify-content-center">
@@ -39,4 +40,5 @@
         </div>
     </div>
 </div>
+{% endif %}
 {% endblock %}
