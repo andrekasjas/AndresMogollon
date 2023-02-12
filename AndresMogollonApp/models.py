@@ -48,8 +48,8 @@ class educacion_experiencias(models.Model):
     nombre = models.CharField(help_text='Nombre de la educacion ó experiencia', max_length=250)
     institucion = models.CharField(help_text='Institucion que otorga la educacion ó experiencia', max_length=250)
     descripcion = models.CharField(help_text='Descripcion de la educacion ó experiencia', max_length=250)
-    inicio = models.IntegerField(help_text='Año de inicio de la educacion ó experiencia')
-    fin = models.IntegerField(help_text='Año de finalizacion de la educacion ó experiencia', null=True, blank=True)
+    inicio = models.CharField(help_text='Año de inicio de la educacion ó experiencia', max_length=12)
+    fin = models.CharField(help_text='Año de fin de la educacion ó experiencia', max_length=12)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now_add=True)
 
